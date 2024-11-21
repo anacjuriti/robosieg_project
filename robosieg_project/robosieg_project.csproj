@@ -1,17 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <!--Este arquivo define as configurações e dependências do projeto .NET-->
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
+
+    <!--versão do .NET usada pelo projeto-->
     <TargetFramework>net9.0</TargetFramework>
+
+    <!--aqui habilita as usings implícitas, para reduzir a necessidade de declarações futuras-->
     <ImplicitUsings>enable</ImplicitUsings>
+
+    <!--não esquecer do sistema de nulabilidade, para prevenir erros relacionados a objetos nulos-->
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Dependências do Selenium -->
+    <!--Dependências para trabalhar com o Selenium-->
+
+    <!-- biblioteca de suporte-->
     <PackageReference Include="Selenium.Support" Version="4.26.1" />
+
+    <!--biblioteca principal para automação de navegadores-->
     <PackageReference Include="Selenium.WebDriver" Version="4.26.1" />
+
+    <!--WebDriver do chrome, que é essencial para automação no navegador google-->
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="131.0.6778.8500" />
   </ItemGroup>
-
 </Project>

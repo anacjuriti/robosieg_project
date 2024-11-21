@@ -1,75 +1,44 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using NUnit.Framework; //framework para testes unitários
+using OpenQA.Selenium; //biblioteca para controle de navegadores
+using OpenQA.Selenium.Chrome; //implementação  para o navegador Chrome
 
 namespace robosieg_project.tests
 {
     public class UnitTest1
     {
-        private ChromeDriver? driver;
+        private ChromeDriver? driver; //instância do ChromeDriver, usada para controlar o navegador
 
         [SetUp]
         public void Setup()
         {
-            // Inicializa o ChromeDriver
+            //configuração inicial-> nova instância do ChromeDriver
             var options = new ChromeOptions();
-            options.AddArgument("--headless"); // Roda sem interface gráfica para melhorar desempenho
-            driver = new ChromeDriver(options);
+            
+            //adc o argumento "--headless", para permitir rodar no navegador sem interface gráfica
+            options.AddArgument("--headless");
+            driver = new ChromeDriver(options); //inicializa o driver
         }
 
         [Test]
         public void TestMethod1()
         {
-            // Verifica se o driver foi inicializado
+            // Garante que o driver foi inicializado corretamente antes de prosseguir
             Assert.That(driver, Is.Not.Null, "Driver não foi inicializado.");
 
-            // Usa o operador de exclusão de anulabilidade (!) após garantir que driver não é nulo
-            driver!.Navigate().GoToUrl("https://www.google.com");
+            //atenção ao driver verificado como não nulo (para evitar alertas de nulabilidade)
+            driver!.Navigate().GoToUrl("https://www.google.com"); //url do google
+            
+            //verifica se a URL acessada corresponde a esperada
             Assert.That(driver.Url, Is.EqualTo("https://www.google.com/"), "A URL não é a esperada.");
         }
 
         [TearDown]
         public void Teardown()
         {
-            // Fecha o navegador e libera recursos
-            driver?.Quit();
+            //chama método após cada teste para limpar os recursos
+            //fecha o navegador e libera a memória
+            driver?.Quit(); 
             driver?.Dispose();
         }
     }
 }
-
-
-
-/*using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-
-namespace robosieg_project.tests
-{
-    public class UnitTest1
-    {
-        private IWebDriver driver;
-
-        [SetUp]
-        public void Setup()
-        {
-            // Inicializa o WebDriver antes de cada teste
-            driver = new ChromeDriver();
-        }
-
-        [Test]
-        public void TestMethod1()
-        {
-            driver.Navigate().GoToUrl("https://www.google.com");
-            Assert.Pass("Teste concluído com sucesso!");
-        }
-
-        [TearDown]
-        public void Teardown()
-        {
-            // Fecha o navegador após cada teste
-            driver.Quit();
-        }
-    }
-}
- */

@@ -1,26 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <!--Especifica a versão do .NET que será usada neste projeto-->
     <TargetFramework>net9.0</TargetFramework>
+
+    <!--Configura o uso da versão mais recente do C#-->
     <LangVersion>latest</LangVersion>
+
+    <!--Ativa o uso de using, facilitando o código-->
     <ImplicitUsings>enable</ImplicitUsings>
+
+    <!--Habilita a análise de valores nulos, ajudando a evitar bugs relacionados-->
     <Nullable>enable</Nullable>
+
+    <!--Impede que este projeto seja empacotado como uma biblioteca (ate. não será publicado como NuGet)-->
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Dependências para testes -->
-    <PackageReference Include="coverlet.collector" Version="6.0.2" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
-    <PackageReference Include="NUnit" Version="4.2.2" />
-    <PackageReference Include="NUnit.Analyzers" Version="4.3.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+    <!--Dependências relacionadas aos testes unitários e cobertura de código-->
+    <PackageReference Include="coverlet.collector" Version="6.0.2" /> <!--Ferramenta para medir cobertura do código-->
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" /> <!--Necessário para executar testes no ambiente .NET-->
+    <PackageReference Include="NUnit" Version="4.2.2" /> <!--Framework de testes utilizado neste projeto-->
+    <PackageReference Include="NUnit.Analyzers" Version="4.3.0" /> <!--analisadores para validar e aprimorar testes NUnit-->
+    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" /> <!--adapta os testes NUnit para execução na interface de teste do .NET-->
   </ItemGroup>
 
   <ItemGroup>
-    <!-- Referência ao projeto principal -->
+    <!--Adiciona uma referência ao projeto principal, permitindo que este projeto de testes acesse o código-->
     <ProjectReference Include="..\robosieg_project\robosieg_project.csproj" />
   </ItemGroup>
 
 </Project>
-

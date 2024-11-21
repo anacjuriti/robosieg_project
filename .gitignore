@@ -1,6 +1,20 @@
+# .NET
 bin/
 obj/
-.vs/
+*.swp
 *.user
+*.rsuser
 *.suo
-*.pdb
+*.cache
+*.csproj.user
+*.pidb
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Logs
+*.log

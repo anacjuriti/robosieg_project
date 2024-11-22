@@ -96,5 +96,9 @@ Se tiver dúvidas ou sugestões, entre em contato:
 - Nome: Ana Guimarães
 - E-mail: anacjuriti@gmail.com
 
+## Ficha Técnica
+
+https://walnut-amethyst-a91.notion.site/Projeto-Rob-SieG-126cb974161580c6802ce8ae3523aa38?pvs=4
+
 ---
 
